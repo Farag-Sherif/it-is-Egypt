@@ -1,0 +1,1182 @@
+:root{
+	--main-color: #1b1b1b ;
+	--secondary-color: #febe47;
+	--third-color: #fef9c6;
+	--main-padding: 5rem ;
+	--main-transition: 1s ;
+}
+*{
+	font-family: "Lato", sans-serif;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding:0px;
+	margin:0px;
+}
+html{
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+body{
+	cursor: url(../img/main-page/favicon.png), auto;
+	background-image: url(../img/main-page/dirt-texture.webp);
+}
+a{
+	text-decoration:none;
+}
+.container{
+	margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+/*small*/
+@media (min-width:768px){
+	.container{
+		width:750px;
+	}
+}
+/*medium*/
+@media (min-width:992px){
+	.container{
+		width:970px;
+	}
+}
+/*larg*/
+@media (min-width:1200px){
+	.container{
+		width:1170px;
+	}
+}
+ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+/* ======================start loading page======================  */
+.loading{
+	width: 100%;
+	height: 100vh;
+	background: var(--main-color);
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	z-index: 9999999;
+	display: flex;
+}
+.loading img{
+	width: 10rem;
+}
+/* ======================end loading page======================  */
+/* ======================start header======================  */
+header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 999;
+}
+header .container{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 7rem;
+}
+header .container .logo{
+	width: 5rem;
+}
+header .container nav{
+	display: flex;
+	align-items: center;
+}
+@media (max-width:767px){
+	header .container nav{
+		display: none;
+	}
+}
+header .container nav .our-program-list .open-our-programs,
+header .container nav a{
+	color: var(--third-color);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding: 1rem 1.5rem;
+	font-weight: 300;
+}
+header .container nav .our-program-list .open-our-programs{
+	cursor: pointer;
+}
+header .container nav .our-program-list{
+	position: relative;
+}
+header .container nav .our-program-list .other-programs{
+	flex-direction: column;
+    width: 100%;
+    position: absolute;
+    background-color: var(--third-color);
+    padding: 1rem;
+    border-radius: 0 0 2rem 2rem;
+	display: none;
+}
+header .container nav .our-program-list:hover .other-programs{
+	display: flex;
+}
+header .container nav .our-program-list .other-programs a{
+	color: var(--main-color);
+    padding: .5rem 1rem;
+    text-transform: none;
+    transition: var(--main-transition);
+    border-radius: 1rem;
+    margin-bottom: .5rem;
+    font-size: 1.4rem;
+	font-weight: 300;
+}
+header .container nav .our-program-list .other-programs a:hover{
+	background-color: #f1edbc;
+}
+header .container .button{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 50%;
+	cursor: pointer;
+	display: none;
+}
+@media (max-width:767px){
+	header .container .button{
+		display: flex;
+	}
+}
+header .container .button span{
+	display: block;
+    height: 2px;
+    background-color: var(--third-color);
+    width: 2rem;
+    margin: 3px;
+}
+header .container .button .center{
+	width: 3rem;
+}
+/* list items @media 767px */
+header .container .list-items{
+	position: absolute;
+	width: 70%;
+	height: 100vh;
+	top: 0;
+	left: -100%;
+	background-color: var(--main-color);
+    padding: 5rem 3rem;
+	transition: var(--main-transition);
+}
+header .container .active-list-items{
+	left: 0;
+}
+.list-items-before{
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0 0 0 / 60%);
+    position: absolute;
+    top: 0;
+    left: 0;
+	display: none;
+}
+header .container .list-items img{
+	width: 70%;
+    display: flex;
+    margin: 0 auto;
+}
+header .container .list-items a{
+	display: block;
+	font-size: 2rem;
+	color: var(--third-color);
+	margin: 2rem 0;
+	font-weight: 300;
+}
+header .container .list-items #our-programs{
+	display: block;
+	font-size: 2rem;
+	color: var(--third-color);
+	margin: 2rem 0;
+	font-weight: 300;
+	cursor: pointer;
+}
+header .container .list-items .our-prog{
+	padding-left: 2rem;
+	position: relative;
+}
+header .container .list-items .visibility{
+	position: absolute;
+	background-color: var(--main-color);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: var(--main-transition);
+}
+header .container .list-items .active-visibility{
+	top: 100%;
+}
+
+/* ======================end header======================  */
+/* ======================start landing======================  */
+.landing{
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+.landing .sky{
+    width: calc(100% + 1000px);
+    height: calc(100% + 10px);
+    position: absolute;
+    left: -500px;
+    top: -10px;
+	z-index: 0;
+	transition: var(--main-transition);
+}
+.landing .text{
+	width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+	transition: var(--main-transition);
+}
+@media(min-width:993px){
+	.landing .text{
+		width: 80%;
+	}
+}
+.landing .pyramidsTwo{
+	width: calc(100% + 1000px);
+    position: absolute;
+    right: -500px;
+    bottom: 0;
+    z-index: 2;
+	transition: var(--main-transition);
+}
+.landing .pyramidsOne{
+	width: calc(100% + 1000px);
+    position: absolute;
+    left: -500px;
+    bottom: 0;
+	z-index: 3;
+	transition: var(--main-transition);
+}
+/* ======================end landing======================  */
+/* ======================start Experience======================  */
+.experience-egypt{
+	position: relative;
+	padding-top: var(--main-padding);
+	padding-bottom: var(--main-padding);
+}
+.experience-egypt .container{
+	overflow: hidden;
+}
+.experience-egypt .shadow{
+    position: absolute;
+    top: -75px;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(transparent, #27261f 50%, transparent );
+    height: 150px;
+    z-index: 4;
+}
+.experience-egypt .experience-text{
+	transition: 1s ease-in-out;
+	opacity: 0;
+	transform: translateY(10rem);
+	padding-top: var(--main-padding);
+	padding-bottom: var(--main-padding);
+}
+.experience-egypt .display-experience-text{
+	opacity: 1;
+	transform: translateY(0);
+}
+.experience-egypt .top-bg{
+	position: absolute;
+    width: 50%;
+    right: 0;
+    top: 0;
+	mix-blend-mode: screen;
+	z-index: -1;
+}
+.experience-egypt .container .text{
+    display: flex;
+    gap: 4rem;
+    justify-content: space-evenly;
+}
+.experience-egypt .container p{
+	width: 50rem;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--third-color);
+    line-height: 1.5;
+}
+@media(max-width:767px){
+	.experience-egypt .container .text{
+		align-items: center;
+		flex-direction: column;
+	}
+	.experience-egypt .container .text p{
+		width:100%;
+	}
+}
+.experience-egypt .experience-video{
+	padding: 10rem 5rem var(--main-padding);
+	transition: 1s ease-in-out;
+	opacity: 0;
+	transform: translateX(-10rem);
+}
+.experience-egypt .display-experience-video{
+	opacity: 1;
+	transform: translateX(0);
+}
+.experience-egypt .video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+    margin: auto;
+}
+.experience-egypt .video video{
+	width: 500px;
+	max-width: 100%;
+	border-radius: 2rem;
+}
+.experience-egypt .video::before{
+    content: "";
+    position: absolute;
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    border: 1rem solid var(--secondary-color);
+    top: -3rem;
+    left: -3rem;
+    z-index: -1;
+    border-radius: 3rem;
+}
+.experience-egypt .video i{
+	font-size: 8rem;
+	position: absolute;
+	color: var(--secondary-color);
+	cursor: pointer;
+}
+/* ======================end Experience======================  */
+/* ======================start egypt-by-all-language======================  */
+.egypt-by-all-language{
+	padding: var(--main-padding) 0;
+	overflow-x: hidden;
+}
+.egypt-by-all-language p{
+	font-size: 4.5rem;
+	display: flex;
+	flex-wrap: nowrap;
+}
+.egypt-by-all-language span{
+	white-space: pre;
+	color: var(--third-color);
+}
+.egypt-by-all-language .secondaryc{
+	color: var(--secondary-color);
+}
+.egypt-by-all-language .first-line,
+.egypt-by-all-language .third-line{ 
+	transition: var(--main-transition);
+}
+.egypt-by-all-language .second-line{
+	transition: var(--main-transition);
+}
+.egypt-by-all-language .first,
+.egypt-by-all-language .third{
+	animation: move 70s infinite linear;
+}
+.egypt-by-all-language .second{
+	animation: move 70s infinite reverse linear;
+}
+
+/* ======================end egypt-by-all-language======================  */
+/* ======================end egypt-by-all-language======================  */
+.our-programs{
+	padding: var(--main-padding) 0 0;
+	position: relative;
+}
+.our-programs .content{
+	display: flex;
+	gap: 3rem;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	padding-bottom: var(--main-padding);
+}
+.our-programs .program{
+	width: 30rem;
+	max-width: 100%;
+	display: block;
+	transition: 1s ease-in-out;
+	opacity: 0;
+	transform: translateY(10rem);
+}
+.our-programs .display-program{
+	opacity: 1;
+	transform: translateY(0);
+}
+.our-programs a img{
+	width: 100%;
+	height: 100%;
+}
+.our-programs a .ogta{
+	border: .5rem solid #0cb9c1;	
+}
+.our-programs a .ogte{
+	border: .5rem solid #f38924;	
+}
+.our-programs a .ogv{
+	border: .5rem solid #f85a40;	
+}
+.our-programs  .bottom-bg{
+	position: absolute;
+    width: 50%;
+    left: 0;
+    bottom: 0;
+	mix-blend-mode: screen;
+	z-index: -1;
+}
+footer{
+	border-top: 1px solid #eee;
+}
+footer p{
+	padding: 4rem 0;
+	font-size: 1.6rem;
+	text-align: center;
+	color: var(--third-color);
+}
+footer a{
+	font-size: 2rem;
+	color: var(--secondary-color);
+}
+footer span{
+	color: #f85a40;
+}
+/* ======================end egypt-by-all-language======================  */
+/* ======================start Ingredients used more than once======================  */
+.head{
+    text-align: center;
+    font-size: var(--main-padding);
+    font-weight: 800;
+    color: var(--third-color);
+    text-transform: uppercase;
+	padding: var(--main-padding) 0;
+}
+@media(max-width:767px){
+	.head{
+		font-size: 4rem;
+	}
+}
+.head span{
+    color: var(--secondary-color);
+}
+.fw300{
+	font-weight: 300;
+}
+.fw400{
+	font-weight: 400;
+}
+.fw500{
+	font-weight: 500;
+}
+.fw600{
+	font-weight: 600;
+}
+.fw700{
+	font-weight: 700;
+}
+.fw800{
+	font-weight: 800;
+}
+.fw900{
+	font-weight: 900;
+}
+/* ======================end Ingredients used more than once======================  */
+/* ======================start teacher======================  */
+.teacher-page-landing{
+	background-image: url(../img/teacher-page/young_international_teachers_teaching_egyptian_students.png)
+}
+.landing .logo{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80rem;
+    max-width: 70%;
+}
+@media (max-width:768px){
+	.landing .small-media{
+		display: block;
+		width: 40rem;
+		max-width: 70%;
+	}
+	.teacher-page-landing{
+		background-image: url(../img/teacher-page/mb_gte.png)
+	}
+	.landing .large-media{
+		display: none;
+	}
+}
+@media (min-width:768px){
+	.landing .large-media{
+		display: block;
+	}
+	.landing .small-media{
+		display: none;
+	}
+}
+.golobal-teacher span{
+	color: #f38924;
+}
+.golobal-teacher .container p{
+	width: 100%;
+}
+.swiper {
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	overflow: hidden;
+}
+.swiper-wrapper{
+	display: flex;
+}
+.swiper-slide {
+	background-position: center;
+	background-size: cover;
+	width: 300px;
+	height: 300px;
+}
+.swiper-slide img {
+	height: 100%;
+	width: 30rem;
+}
+.experience-video .teacher-video::before{
+    border-color: #f38924;
+}
+.experience-video .teacher-video i{
+	color: #f38924;
+}
+.our-projects{
+	position: relative;
+}
+.our-projects .filter{
+	display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+    border-bottom: 1px solid #eee;
+    margin: 0 10rem 3rem;
+	align-items: center;
+}
+@media(max-width:767px){
+	.our-projects .filter{
+		flex-direction: column;
+		gap: 1rem;
+		margin: 0 2rem 3rem;
+	}
+}
+.our-projects .filter h3{
+	font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--third-color);
+    margin-bottom: 1rem;
+}
+.our-projects .filter p{
+	font-size: 1.6rem;
+	color: var(--third-color);
+	display: none;
+}
+.our-projects button{
+	font-size: 1.6rem;
+	color: var(--third-color);
+	background-color: #f38924;
+	padding: .5rem 1.5rem;
+	border-radius: 1.5rem;
+	border: none;
+	outline: none;
+	display: block;
+	margin: 0 0 1rem auto;
+	text-transform: uppercase;
+	transition: var(--main-transition);
+}
+@media(max-width:767px){
+	.our-projects button{
+		margin: 0 auto;
+	}
+}
+.our-projects button:hover{
+	background-color: white;
+	color:  #f38924;
+}
+.our-projects .filter input{
+	font-size: 1.4rem;
+	color: var(--third-color);
+	background-color: #f38924;
+	padding: .5rem 1.5rem;
+	border-radius: 1.5rem;
+	border: none;
+	outline: none;
+	margin: 0 0 0 auto;
+	text-transform: uppercase;
+	transition: var(--main-transition);
+}
+.our-projects .filter input:hover{
+	background-color: white;
+	color:  #f38924;
+}
+.our-projects .filter lable{
+	font-size: 1.6rem;
+	color: var(--third-color);
+	margin-right: .5rem;
+}
+@media(max-width:767px){
+	.our-projects .filter lable{
+		display: block;
+		margin-bottom: 1rem;
+	}
+}
+.our-projects .filter p{
+	font-size: 1.6rem;
+	color: var(--third-color);
+}
+.our-projects .load-more .load{
+	width: 50px;
+    height: 50px;
+    border: .7rem solid ;
+	border-color: #f38924 #f38924 #f38924 transparent;
+    border-radius: 50%;
+    margin: 2rem auto;
+	animation: loading var(--main-transition) infinite linear;
+}
+.our-projects .load-more button{
+	margin: 0 auto 4rem;
+}
+.our-projects .bottom-bg{
+	position: absolute;
+    width: 50%;
+    left: 0;
+    bottom: 0;
+	mix-blend-mode: screen;
+	z-index: -1;
+}
+.filter-list{
+	position: fixed;
+    width: 80%;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    z-index: 20;
+    background: var(--main-color);
+    border-radius: 2rem;
+    padding: 3rem;
+	display: none;
+}
+.active-filter-list{
+	display: flex;
+}
+@media(max-width:767px){
+	.filter-list{
+		width:60rem;
+		max-width:100%;
+	}
+}
+.list-before{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background-color: rgb(0 0 0 / 70%);
+	top: 0;
+	left: 0;
+	display: none;
+}
+.active-list-before{
+	display: block;
+}
+.filter-list .sections{
+	width: 30%;
+    color: var(--third-color);
+    font-size: 1.6rem;
+    margin-right: 2rem;
+	cursor: pointer;
+}
+.filter-list .sections .filters{
+	padding: 1.5rem 1rem;
+    border-radius: 6px;
+}
+.filter-list .sections .active-filter{
+	border-right: 0.5rem solid #f38924;
+	background: #323232;
+}
+.filter-list .list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    padding-left: 2rem;
+    border-left: 1px solid #f38924;
+	height: fit-content;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.filter-list .list .box{
+	width: 50%;;
+	height: fit-content;
+	font-size: 1.6rem;
+	color: var(--third-color);
+	padding-right: 2.5rem;
+	padding-left: 2rem;
+}
+@media (max-width:992px){
+	.filter-list .list{
+		flex-direction: column;
+		flex-wrap: nowrap;
+		height: 100%;
+	}
+	.filter-list .list .box{
+		width:100%;
+	}
+}
+.filter-list .list .box:not(:last-child){
+	padding-bottom: 2.5rem;
+}
+.list .box input[type="checkbox"]{
+	-webkit-appearance:none;
+	appearance:none;
+}
+.list .box label{
+	position: relative;
+	cursor: pointer;
+}
+.list .box label::before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    border: 2px solid #f38924;
+    left: -25px;
+	top: 0;
+}
+.list .box label::after{
+    content: "\f00c";
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    left: -20px;
+    position: absolute;
+	top: 0;
+	display: none;
+}
+.list .box input[type="checkbox"]:checked + label::after{
+	display: block;
+}
+.filter-list .second{
+	display: none;
+}
+/* ======================end teacher======================  */
+/* ======================start talent page======================  */
+.talent-page-landing{
+	background-image: url(../img/talent-page/young_international_youth_working_in_an_egyptian_comp.png)
+}
+@media (max-width:768px){
+	.talent-page-landing{
+		background-image: url(../img/talent-page/mb_gta.png)
+	}
+}
+.golobal-talent span{
+	color: #0cb9c1;
+}
+.golobal-talent .container p{
+	width: 100%;
+}
+.our-projects #talent-button{
+	color: white;
+	background-color: #0cb9c1;
+}
+.our-projects #talent-button:hover{
+	background-color: white;
+	color:  #0cb9c1;
+}
+.our-projects  #loading-talent{
+	border-color: #0cb9c1 #0cb9c1 #0cb9c1 transparent;
+}
+.experience-video .talent-video::before{
+    border-color: #0cb9c1;
+}
+.experience-video .talent-video i{
+	color: #0cb9c1;
+}
+.talent-list .box label::before{
+    border-color: #0cb9c1;
+}
+.filter-talent .sections .active-filter{
+	border-right: 0.5rem solid #0cb9c1;
+}
+.filter-talent .list{
+    border-left: 1px solid #0cb9c1;
+}
+.filter-list .third{
+	display: none;
+}
+/* ======================end talent page======================  */
+/* ======================start volunteer page======================  */
+.volunteer-page-landing{
+	background-image: url(../img/volunteer-page/young_people_capturing_images_for_egypt.png)
+}
+@media (max-width:767px){
+	.volunteer-page-landing{
+		background-image: url(../img/volunteer-page/mb.png)
+	}
+}
+.golobal-volunteer span{
+	color: #f85a40;
+}
+.golobal-volunteer .container p{
+	width: 100%;
+}
+.our-projects #volunteer-button{
+	color: white;
+	background-color: #f85a40;
+}
+.our-projects #volunteer-button:hover{
+	background-color: white;
+	color:  #f85a40;
+}
+.our-projects  #loading-volunteer{
+	border-color: #f85a40 #f85a40 #f85a40 transparent;
+}
+.experience-video .volunteer-video::before{
+    border-color: #f85a40;
+}
+.experience-video .volunteer-video i{
+	color: #f85a40;
+}
+.volunteer-list .box label::before{
+    border-color: #f85a40;
+}
+.filter-volunteer .sections .active-filter{
+	border-right: 0.5rem solid #f85a40;
+}
+.filter-volunteer .list{
+    border-left: 1px solid #f85a40;
+}
+.filter-list .third{
+	display: none;
+}
+/* ======================end volunteer page======================  */
+/* ======================start why egypt page======================  */
+.why-egypt-landing-small{
+	background: url(../img/why-egypt-page/landing-mobile/whyEgyptHero.webp);
+	background-size: cover;
+	display: none;
+}
+@media (max-width:767px){
+	.why-egypt-landing-small{
+		display: block;
+	}
+}
+.why-egypt-landing-large{
+	background-image: url(../img/why-egypt-page/landing/whyEgyptHero.png);
+	background-size: cover;
+	display: none;
+}
+@media (min-width:768px){
+	.why-egypt-landing-large{
+		display: block;
+	}
+}
+.landing .balloon-1,
+.landing .balloon-2,
+.landing .balloon-3,
+.landing .balloon-4,
+.landing .balloon-5,
+.landing .balloon-6,
+.landing .balloon-7,
+.landing .balloon-8{
+	width: 100%;
+	position: absolute;
+	transition: var(--main-transition);
+}
+.why-egypt-landing-large .balloon-1{
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+.why-egypt-landing-large .balloon-2{
+    top: 60%;
+    left: 7%;
+    z-index: 1;
+}
+.why-egypt-landing-large .balloon-3{
+	top: 0%;
+    z-index: 2;
+}
+.why-egypt-landing-large .balloon-4{
+	top: 0;
+    z-index: 3;
+}
+.why-egypt-landing-large .balloon-5{
+    top: 50%;
+	z-index: 4;
+}
+.why-egypt-landing-large .balloon-6{
+	top: 15%;
+    z-index: 6;
+}
+.why-egypt-landing-large .balloon-7{
+	top: 45%;
+    z-index: 7;
+}
+.why-egypt-landing-large .balloon-8{
+	top: 20%;
+    z-index: 8;
+}
+.why-egypt-landing-small .balloon-1{
+    top: -25%;
+    right: 0;
+    z-index: 0;
+}
+.why-egypt-landing-small .balloon-2{
+    top: 25%;
+    left: -55%;
+    z-index: 1;
+}
+.why-egypt-landing-small .balloon-3{
+	top: -15%;
+    right: -45%;
+    z-index: 2;
+}
+.why-egypt-landing-small .balloon-4{
+    top: -55px;
+    left: -50%;
+    z-index: 3;
+}
+.why-egypt-landing-small .balloon-5{
+    top: -30%;
+    right: -10%;
+    z-index: 4;
+}
+.why-egypt-landing-small .balloon-6{
+    top: 10%;
+    left: -10%;
+    z-index: 6;
+}
+.why-egypt-landing-small .balloon-7{
+    top: -15%;
+    left: 15%;
+    z-index: 7;
+}
+.why-egypt-landing-small .balloon-8{
+    top: 50%;
+    left: 50%;
+    z-index: 8;
+}
+.why-egypt{
+	overflow: hidden;
+}
+.why-egypt .box{
+	display: flex;
+	align-items: center;
+	padding: var(--main-padding) 0;
+	justify-content: space-between;
+    gap: 3rem;
+}
+.why-egypt .head{
+	font-size: 3.5rem;
+	padding: 2rem 0;
+	text-align: start;
+}
+.why-egypt .info p{
+    max-width: 60rem;
+    text-align: start;
+    width: 100%;
+	font-size: 1.8rem;
+}
+@media (max-width:767px){
+	.why-egypt .box{
+		flex-direction: column;
+	}
+	.why-egypt .center{
+		flex-direction: column-reverse;
+	}
+	.why-egypt .head{
+		text-align: center;
+	}
+	.why-egypt .info p{
+		text-align: center;
+		width: 100%;
+		margin-bottom: 4.5rem;
+	}
+}
+.why-egypt .image{
+	position: relative;
+	margin-right: 4.5rem;
+}
+.why-egypt .image::before{
+	content: "";
+    position: absolute;
+    top: -35px;
+    right: -35px;
+    border: 1rem solid var(--secondary-color);
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    z-index: -1;
+    border-radius: 2rem;
+}
+.why-egypt .left{
+	margin-left: 4.5rem;
+}
+@media(max-width: 767px){
+	.why-egypt .image{
+		margin: 0;
+	}
+	.why-egypt .image img{
+		max-width: 100%;
+	}
+}
+.why-egypt .left::before{
+	left: -35px;
+}
+.why-egypt .image img{
+	width: 30rem;
+    border-radius: 2rem;
+}
+.why-egypt .right{
+	transform: translateX(40rem);
+	opacity: 0;
+	transition: var(--main-transition);
+}
+.why-egypt .left{
+	transform: translateX(-40rem);
+	opacity: 0;
+	transition: var(--main-transition);
+}
+.why-egypt .active-image{
+	transform: translateX(0);
+	opacity: 1;
+}
+.why-egypt .info-right{
+	transform: translateX(40rem);
+	opacity: 0;
+	transition: var(--main-transition);
+}
+.why-egypt .info-left{
+	transform: translateX(-40rem);
+	opacity: 0;
+	transition: var(--main-transition);
+}
+.why-egypt .active-info{
+	transform: translateX(0);
+	opacity: 1;	
+}
+.swiper-slide img {
+	height: 100%;
+	width: 30rem;
+}
+@media(max-width: 767px){
+	.destinations .swiper-slide img {
+		width: 20rem;
+	}
+}
+.destinations img{
+	border-radius: 2rem;
+}
+.destinations .head{
+	font-size: 3.5rem;
+}
+.destinations .mySwiper{
+	padding-bottom: 10rem;
+}
+.destinations .swiper-slide{
+	position: relative;
+}
+.destinations .name-of-location{
+	position: absolute;
+	bottom: 0;
+	padding: 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+.destinations .name-of-location h3{
+	font-size: 2.5rem;
+    color: var(--third-color);
+}
+.destinations .name-of-location button{
+	padding: 1rem 1.5rem;
+	background-color: var(--secondary-color);
+	color: var(--third-color);
+	font-size: 2rem;
+	border: navajowhite;
+	outline: navajowhite;
+	border-radius: 1rem;
+	cursor: pointer;
+	transition: var(--main-transition);
+}
+.destinations .name-of-location button:hover{
+	background-color: var(--third-color);
+	color: var(--secondary-color);
+}
+.destination-videos{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 200;
+	width: 100%;
+}
+.videos-before{
+	position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    background-color: rgb(0 0 0 / 80%);
+	z-index: 100;
+	display: none;
+}
+.destination-videos .video{
+	width: 50rem;
+	max-width: 100%;
+    margin: auto;
+	position: relative;
+	display: none;
+}
+.destination-videos .video video{
+	border-radius: 2rem;
+	width: 100%;
+}
+.destination-videos .video i{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
+    color: var(--secondary-color);
+	cursor: pointer;
+}
+/* ======================end why egypt page======================  */
+/* ======================end animations======================  */
+@keyframes move{
+	0%{
+		transform: translateX(0);
+	}
+	100%{
+		transform: translateX(-100%);
+	}
+
+}
+@keyframes loading{
+	0%{
+		transform: rotate(0);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+/* ======================end animations======================  */
+
