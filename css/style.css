@@ -248,17 +248,17 @@ header .container .list-items .active-visibility{
 	}
 }
 .landing .pyramidsTwo{
-	width: calc(100% + 1000px);
+	width: 100%;
     position: absolute;
-    right: -500px;
+    right: 0;
     bottom: 0;
     z-index: 2;
 	transition: var(--main-transition);
 }
 .landing .pyramidsOne{
-	width: calc(100% + 1000px);
+	width: 100%;
     position: absolute;
-    left: -500px;
+    left: 0;
     bottom: 0;
 	z-index: 3;
 	transition: var(--main-transition);
@@ -1179,4 +1179,5 @@ footer span{
 	}
 }
 /* ======================end animations======================  */
+
 
